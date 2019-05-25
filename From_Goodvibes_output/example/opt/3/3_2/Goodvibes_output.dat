@@ -1,0 +1,15 @@
+   GoodVibes v2.0.2 2019/01/17 14:26:01
+   REF: Funes-Ardoiz, I.; Paton, R. S. (2016). GoodVibes: GoodVibes 2.0.2 http://doi.org/10.5281/zenodo.595246
+   Requested: -f 0 -t 363 
+
+   Temperature = 363.0 Kelvin   Pressure = 1 atm
+   Frequency scale factor 1.0
+
+   Quasi-harmonic treatment: frequency cut-off value of 0.0 wavenumbers will be applied
+   QH = Grimme: Using a mixture of RRHO and Free-rotor vibrational entropies
+   REF: Grimme, S. Chem. Eur. J. 2012, 18, 9955-9964
+
+   Structure                                           E        ZPE             H        T.S     T.qh-S          G(T)       qh-G(T)
+   ********************************************************************************************************************************
+o  3                                        -1406.891617   0.446875  -1406.406128   0.117427   0.117427  -1406.523555  -1406.523555
+   ********************************************************************************************************************************

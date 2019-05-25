@@ -1,0 +1,4 @@
+species lowest_E_isomer E_opt G_opt E_sp G_sp freq cpu_time_minutes
+1 only_geometry -805.028 -804.959 -805.143 -805.075 40.0336 13.5433
+2 only_geometry -601.86 -601.559 -602.008 -601.706 46.6043 507.043
+3 3c -1406.9 -1406.51 -1407.16 -1406.77 21.4455 1404.54

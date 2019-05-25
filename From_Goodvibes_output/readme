@@ -1,0 +1,75 @@
+c++ is a better option than python for this one
+
+------------------------------------------------------
+Program to calculate the free energies of reactions. 
+------------------------------------------------------
+
+---------------------------------------------------------------------
+The computed geometries should be in a directory tree of the form:
+---------------------------------------------------------------------
+
+        level_of_theory_1       level_of_theory_2      level_of_theory_3 ...
+          1    2    3 ...         1   2   3 ...              ...
+  1_1 1b 11a  2_1 2b  ...            ...                     ...
+         (some random names 
+         for the different 
+         located structures here)
+
+-------------------------------------------
+The input file should have the structure:
+-------------------------------------------
+
+Levels of theory: level_of_theory_1 level_of_theory_2 
+         // names of directories with the higher and lower levels of theory
+         // will read only the first two. Because... it makes no sense to
+         // put more than two here
+         // if there are more than two give error
+
+Reactions:
+
+R1 r 1 2 p 3 4
+    // read reaction name, r, read labels of reactants, if labels='p'
+    // read labels of products
+
+R2 r 3 4 IrIII p 5 6 IrIV
+
+For reading: when reach end of file quit. Close file.
+
+If more isomers - sort energies - find lowest energy isomer
+
+Read cpu time. Convert from days/hours/minutes/seconds to just seconds.
+
+-------------------------------------
+The program does the following:
+-------------------------------------
+
+goes in dir 1 2 3 4...
+if there are other directories, changes labels array to those directory names
+then gets their energies. Otherwise. Just gets energy (for example something like goutput).
+
+If there are more isomers (subdirectories in main directory for particular intermediate)
+find lowest one
+
+Calculate free energies of reaction
+
+----------------------------
+Output - reaction energies:
+----------------------------
+
+E1:
+
+1 + 2 ---> 3 + 4
+dG = 2.3 kcal/mol
+
+E2:
+
+3 + 4 + IrIII ---> 5 + 6 + IrIV
+dG = 4.5 kcal/mol
+
+Also. Output lowest energy isomers in separate file.
+
+Also. Output all isomers in order of increasing energy, if there were more
+than one for each structure
+
+Also. Print SI info with lowest E geometries and energies. have an option to just do that.
+

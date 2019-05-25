@@ -1,0 +1,10 @@
+%NProc=8
+%Mem=8GB
+%chk=3.chk
+#p freq m062x/6-311+g(d,p) scrf=(smd,solvent=chloroform) Geom=Checkpoint pop=nbo
+
+3.g09
+
+0 1
+
+

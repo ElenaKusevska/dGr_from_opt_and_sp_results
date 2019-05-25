@@ -1,0 +1,22 @@
+sort_main.cpp: In function ‘int main()’:
+sort_main.cpp:72:49: error: ‘ls_output_dir’ was not declared in this scope
+       bubble_sort(E_opt, G_opt, freq, cpu_time, ls_output_dir) ;
+                                                 ^
+sort_main.cpp:92:47: error: ‘E_opt_sort’ was not declared in this scope
+       sorted_energies << isomers[i] << " " << E_opt_sort[i] << " " 
+                                               ^
+sort_main.cpp:93:26: error: ‘G_opt_sort’ was not declared in this scope
+                       << G_opt_sort[i] << " " << freq_sort[i] 
+                          ^
+sort_main.cpp:93:50: error: ‘freq_sort’ was not declared in this scope
+                       << G_opt_sort[i] << " " << freq_sort[i] 
+                                                  ^
+sort_main.cpp:26:11: warning: unused variable ‘j’ [-Wunused-variable]
+    int i, j, k ;
+           ^
+sort_main.cpp:26:14: warning: unused variable ‘k’ [-Wunused-variable]
+    int i, j, k ;
+              ^
+sort_main.cpp:99:1: error: expected ‘}’ at end of input
+ }
+ ^

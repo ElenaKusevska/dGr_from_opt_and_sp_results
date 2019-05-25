@@ -1,0 +1,10 @@
+get_from_gaussian_output.cpp: In function ‘int gauss_output_multiple_isomers(std::__cxx11::string, std::__cxx11::string, double&, double&, double&, double&, double&, double&, int&, std::__cxx11::string, std::__cxx11::string, std::__cxx11::string)’:
+get_from_gaussian_output.cpp:210:4: error: expected initializer before ‘std’
+    std::string three_up = "../../../"; // go three directories up
+    ^
+get_from_gaussian_output.cpp:215:4: error: ‘cp_out_file_command’ was not declared in this scope
+    cp_out_file_command = "cp *.out " + out_files_path + "/"
+    ^
+get_from_gaussian_output.cpp:252:21: error: ‘three_up’ was not declared in this scope
+    change_directory(three_up);
+                     ^

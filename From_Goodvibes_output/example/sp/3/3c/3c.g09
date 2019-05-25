@@ -1,0 +1,11 @@
+%NProc=8
+%Mem=16GB
+%chk=3c.chk
+#p m062x/6-311+g(d,p) scrf=(smd,solvent=chloroform) Geom=Checkpoint pop=nbo output=wfn gfinput
+ 
+3c
+ 
+0 1
+ 
+3c.wfn
+ 

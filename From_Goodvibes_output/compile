@@ -1,0 +1,1 @@
+g++ -std=c++11 -Wunused -g functions.cpp get_from_gaussian_output.cpp dGr_main.cpp

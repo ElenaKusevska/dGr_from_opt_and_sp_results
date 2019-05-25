@@ -1,0 +1,31 @@
+
+------------------------------------------------------
+Program to sort isomers from gaussian dft calculations 
+------------------------------------------------------
+
+---------------------------------------------------------------------
+The computed geometries should be in a directory tree of the form:
+---------------------------------------------------------------------
+
+ 
+          1                        2                         3 ...         
+  1_1 1b 11a                     2_1 2b  ...      (some random names 
+                                                   for the different 
+                                                located structures here)
+
+-------------------------------------------
+The input file should have the structure:
+-------------------------------------------
+
+
+
+-------------------------------------
+The program does the following:
+-------------------------------------
+
+
+----------------------------
+Output - reaction energies:
+----------------------------
+
+
