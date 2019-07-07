@@ -13,7 +13,7 @@
 #include <limits.h>
 #include <sys/stat.h>
 #include <string.h>
-
+#include <algorithm>
 
 int main(int argc, char* argv[]) {
 
@@ -185,15 +185,79 @@ int main(int argc, char* argv[]) {
    if_file_exist_delete(goutfilename);
    std::ofstream goutput;
    goutput.open (goutfilename.c_str());
-   goutput << "species lowest_E_isomer E_" << lower_level_of_theory 
-           << " G_" << lower_level_of_theory << " E_"
-           << higher_level_of_theory << " G_" << higher_level_of_theory
-           << " freq cpu_time_minutes" << std::endl;
+
+   int max_lable_len;
+   max_lable_len = 9;
+   for (k=0; k<chemical_species.size(); k=k+1) {
+      max_lable_len = std::max( max_lable_len, 
+            static_cast<int>(chemical_species[k].size()) );
+   }
+
+   int max_lowest_isom_len;
+   max_lowest_isom_len = 16;
+   for (k=0; k<lowest_E_isomer.size(); k=k+1) {
+      max_lowest_isom_len = std::max( max_lowest_isom_len, 
+            static_cast<int>(lowest_E_isomer[k].size()) );
+   }
+
+   int max_char_llt; // maximum characters for lower level of theory
+   max_char_llt = std::max(18,
+         static_cast<int>(lower_level_of_theory.size()) + 3);
+
+   int max_char_hlt; // maximum characters for higher level of theory
+   max_char_hlt = std::max(18,
+         static_cast<int>(higher_level_of_theory.size()) + 3);
+
+   // And now to format and print the output:
+   goutput << std::setw(max_lable_len +1 ) << std::right << "species" 
+           
+           << std::setw(max_lowest_isom_len + 1) << std::right 
+           << "lowest_E_isomer" 
+           
+           << std::setw(max_char_llt) << std::right
+           << "E_" + lower_level_of_theory 
+           
+           << std::setw(max_char_llt) << std::right
+           << "G_" + lower_level_of_theory 
+           
+           << std::setw(max_char_hlt) << std::right
+           << "E_" + higher_level_of_theory 
+           
+           << std::setw(max_char_hlt) << std::right
+           << "G_" + higher_level_of_theory
+           
+           << std::setw(8) << std::right << "freq" 
+           
+           << std::setw(17) << std::right << "cpu_time_minutes" 
+           
+           << std::endl;
+
    for (i=0; i<chemical_species.size(); i=i+1) {
-      goutput << chemical_species[i] << " " << lowest_E_isomer[i] << " " 
-              << E_opt[i] << " " << G_opt[i] << " " 
-              << E_sp[i] << " " << G_sp[i] << " " 
-              << freq1[i] << " " << cpu_time[i] << std::endl;
+      goutput << std::setw(max_lable_len + 1) << std::right 
+              << chemical_species[i] 
+              
+              << std::setw(max_lowest_isom_len + 1) << std::right
+              << lowest_E_isomer[i]
+
+              << std::setw(max_char_llt) << std::right
+              << std::setprecision(max_char_llt - 3) << E_opt[i] 
+
+              << std::setw(max_char_llt) << std::right
+              << std::setprecision(max_char_llt - 3) << G_opt[i]
+
+              << std::setw(max_char_hlt) << std::right
+              << std::setprecision(max_char_hlt - 3) << E_sp[i]
+
+              << std::setw(max_char_hlt) << std::right
+              << std::setprecision(max_char_hlt - 3) << G_sp[i]
+              
+              << std::setw(8) << std::setprecision(5) 
+              << std::right << freq1[i]
+
+              << std::setw(17) << std::setprecision(7)
+              << std::right << cpu_time[i]
+              
+              << std::endl;
    }
 
    goutput.close();
