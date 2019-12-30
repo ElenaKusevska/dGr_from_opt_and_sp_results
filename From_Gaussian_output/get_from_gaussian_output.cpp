@@ -254,7 +254,7 @@ int gauss_output_multiple_isomers(std::string chemical_species, \
    one_ext_file("out"); // will exit if there was not 1
    // If there is only one, copy it to out_files_path:
    cp_out_file_command = "cp *.out " + out_files_path + "/"
-                          + current_isomer + ".out";
+                          + chemical_species + ".out";
    system(cp_out_file_command.c_str());
 
 
@@ -307,7 +307,7 @@ int gauss_output_multiple_isomers(std::string chemical_species, \
    one_ext_file("out"); // will exit if there was not 1
    // If there is only one, copy it to out_files_path:
    cp_out_file_command = "cp *.out " + out_files_path + "/"
-                       + current_isomer + "_sp.out";
+                       + chemical_species + "_sp.out";
    system(cp_out_file_command.c_str());
 
    get_gout_value("grep 'SCF Done' *.out | tail -1",
